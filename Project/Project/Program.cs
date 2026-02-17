@@ -13,8 +13,19 @@ class Program
 
         string svar;
 
+        Console.WriteLine("Hur många tärningar vill du slå? (Max 5)");
+        int tärningsSlag =int.Parse(Console.ReadLine());
+        Console.WriteLine();
+
+        if (tärningsSlag > 5)
+        {
+            tärningsSlag = 5;
+            Console.WriteLine();
+            Console.WriteLine("Tyvärr är 5 max, så vi kör på 5!");
+        }
+
      // i < (5) , 5 = antalet gånger den slår.
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < tärningsSlag; i++)
         {
             Random slumpNum = new Random();
 
@@ -34,7 +45,7 @@ class Program
         Console.WriteLine("Antalet femmor du slog: " + antal);
 
         Console.WriteLine("Vill du fortsätta? ja eller nej?");
-        svar = Console.ReadLine();
+        svar = Console.ReadLine().ToLower();
         Console.WriteLine();
 
         if (svar == "nej")
@@ -45,8 +56,21 @@ class Program
 
         while (svar == "ja")
         {
+         
+            antal = 0;
 
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("Hur många tärningar vill du slå? (Max 5)");
+            tärningsSlag = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            if (tärningsSlag > 5)
+            {
+                tärningsSlag = 5;
+                Console.WriteLine();
+                Console.WriteLine("Tyvärr är 5 max, så vi kör på 5!");
+            }
+
+            for (int i = 0; i < tärningsSlag; i++)
             {
                 Random slumpNum = new Random();
                 int nummer = slumpNum.Next(1, 7);
@@ -73,9 +97,9 @@ class Program
 
             Console.WriteLine("Antalet femmor du slog: " + antal);
             Console.WriteLine("Vill du avsluta? ja eller nej?");
-            svar = Console.ReadLine();
+            svar = Console.ReadLine().ToLower();
             Console.WriteLine();
-
+            
             if (svar == "nej")
             {
             
@@ -92,6 +116,5 @@ class Program
             }
 
         }
-
     }
 }
