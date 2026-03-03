@@ -13,23 +13,21 @@ class Program
 
         string svar;
 
-        Console.WriteLine("Hur många tärningar vill du slå? (Max 5)");
+        Console.WriteLine("Hur många tärningar vill du slå? (1 till 10)");
         int tärningsSlag =int.Parse(Console.ReadLine());
         Console.WriteLine();
 
-        if (tärningsSlag > 5)
+        if (tärningsSlag > 10)
         {
-            tärningsSlag = 5;
+            tärningsSlag = 10;
             Console.WriteLine();
-            Console.WriteLine("Tyvärr är 5 max, så vi kör på 5!");
+            Console.WriteLine("Tyvärr är 10 max, så vi kör på 10!");
         }
 
-     // i < (5) , 5 = antalet gånger den slår.
         for (int i = 0; i < tärningsSlag; i++)
         {
             Random slumpNum = new Random();
 
-         // Next(1),(7) , 1 och 7 är tärningen. Den går 1-7 = 6 sidor.
             int nummer = slumpNum.Next(1,7);
             Console.WriteLine("Du slåg: " + nummer);
             
