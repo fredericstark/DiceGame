@@ -31,7 +31,7 @@ class Program
             int nummer = slumpNum.Next(1,7);
             Console.WriteLine("Du slåg: " + nummer);
             
-         // nummer == (5) , 5 = nummret man samlar.
+         
             if (nummer == 5)
             {
                 antal++;
@@ -55,17 +55,17 @@ class Program
         while (svar == "ja")
         {
          
-            antal = 0;
+            antal = antal;
 
-            Console.WriteLine("Hur många tärningar vill du slå? (Max 5)");
+            Console.WriteLine("Hur många tärningar vill du slå? (1 till 10)");
             tärningsSlag = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
-            if (tärningsSlag > 5)
+            if (tärningsSlag > 10)
             {
-                tärningsSlag = 5;
+                tärningsSlag = 10;
                 Console.WriteLine();
-                Console.WriteLine("Tyvärr är 5 max, så vi kör på 5!");
+                Console.WriteLine("Tyvärr är 10 max, så vi kör på 10!");
             }
 
             for (int i = 0; i < tärningsSlag; i++)
@@ -79,7 +79,7 @@ class Program
                     antal++;
                     total++;
 
-                 //total > (5) , 5 = Max antal man kan samla på.
+                 
                     if (total > 5)
                     {
                         Console.WriteLine("...");
@@ -101,7 +101,7 @@ class Program
             if (svar == "nej")
             {
             
-             //total == (5) , 5 = Det antalet man slutar på för att vinna!
+             
                 if (total == 5)
                 {
                     Console.WriteLine("DU HAR PRECIS 5!! (:");
